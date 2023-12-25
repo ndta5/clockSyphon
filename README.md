@@ -13,6 +13,6 @@ ofxGuiとofxSyphonを適用してプロジェクトを生成する
 
 the free font place under openFrameworks/apps/myApps/clockSyphon/bin/data
 
-適当なフリーフォントopenFrameworks/apps/myApps/clockSyphon/bin/data配下に置く
+適当なフリーフォントをopenFrameworks/apps/myApps/clockSyphon/bin/data配下に置く
 
-https://fonts.google.com/specimen/Lato
+free font https://fonts.google.com/specimen/Lato
