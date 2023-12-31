@@ -2,14 +2,14 @@
 A clock that outputs Syphon using openFrameworks for the VJ at the year-end countdown event. 
 
 年末カウントダウンイベントのVJ用にopenframeworksでSyphon出力する時計を作った
-![Image 1](clockSyphon.png)
+![Image 1](img/clockSyphon.png)
 
 # Usage
 
 Generate a project by applying ofxGui and ofxSyphon
 
 ofxGuiとofxSyphonを適用してプロジェクトを生成する
-
+![Image 2](img/generateProject.png)
 
 the free font place under openFrameworks/apps/myApps/clockSyphon/bin/data
 
