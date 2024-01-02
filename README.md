@@ -17,4 +17,6 @@ the free font place under openFrameworks/apps/myApps/clockSyphon/bin/data
 
 適当なフリーフォントをopenFrameworks/apps/myApps/clockSyphon/bin/data配下に置く
 
+![projectGenerator](img/bindata.png)
+
 free font フリーフォント https://fonts.google.com/specimen/Lato
