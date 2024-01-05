@@ -5,7 +5,7 @@ This App outputs time date by Syphon using openFrameworks, I made this for the V
 
 ![App image](img/clockSyphon.png)
 
-# Usage
+# Build
 
 Generate a project by applying ofxGui and ofxSyphon with projectGenerator of openFrameworks.
 
