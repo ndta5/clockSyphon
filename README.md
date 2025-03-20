@@ -5,6 +5,11 @@ This App outputs time date by Syphon using openFrameworks, I made this for the V
 
 ![App image](img/clockSyphon.png)
 
+# Executable file
+The executable file is in the "bin" folder
+
+実行ファイル(アプリ)は「bin」フォルダの中にあります
+
 # Build
 
 Generate a project by applying ofxGui and ofxSyphon with projectGenerator of openFrameworks.
