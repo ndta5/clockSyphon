@@ -3,6 +3,11 @@
 #include "ofMain.h"
 #include "ofxSyphon.h"
 #include "ofxGui.h"
+#include <iostream>
+#include <chrono>
+#include <iomanip>
+#include <locale>
+
 
 class ofApp : public ofBaseApp{
 
@@ -24,16 +29,18 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h) override;
 		void dragEvent(ofDragInfo dragInfo) override;
 		void gotMessage(ofMessage msg) override;
-
-    string paddingNumberToString(int i);
     
     ofxSyphonServer output;
     ofTrueTypeFont fontText;
     string dateTime;
+    int fontSize = 0;
     int px = 100;
     int py = 100;
     
-    ofxIntSlider slider;
+    ofxIntSlider fontSizeSlider;
+    ofxToggle subSecToggle;
+    ofxToggle weekToggle;
     ofParameter<ofColor> color;
     ofxPanel gui;
+    
 };

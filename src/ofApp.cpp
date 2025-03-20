@@ -6,8 +6,9 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+    
     ofSetFrameRate(24);
-    output.setName("Main");
+    output.setName("clockSyphon");
     
     //バックグランドを透明色に設定
     ofBackground(0, 0);
@@ -24,23 +25,47 @@ void ofApp::setup(){
     
     // GUI
     gui.setup();
-    gui.add(slider.setup("slider", 50, 0, 255));
+    gui.add(fontSizeSlider.setup("Font size", 50, 10, 255));
+    gui.add(subSecToggle.setup("Show sub sec", true));
+    gui.add(weekToggle.setup("Show week", true));
     gui.add(color.set("color", ofColor(255, 255, 0)));
+}
+
+std::string get_time_string(bool subSec, bool week) {
+    // 現在時刻を取得
+    auto now = std::chrono::system_clock::now();
+    auto time = std::chrono::system_clock::to_time_t(now);
+    std::tm local_time = *std::localtime(&time);
+
+    // 1/100秒を取得
+    auto centiseconds = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count() % 1000 / 10;
+
+    // stringstreamで文字列を構築
+    std::stringstream ss;
+    // 曜日を表示するか選択
+    if (week == true) {
+        ss << std::put_time(&local_time, "%Y/%m/%d(%a)");
+    }else{
+        ss << std::put_time(&local_time, "%Y/%m/%d");
+    }
+    ss << std::put_time(&local_time, " %H:%M:%S");
+    // 1/100秒を表示するか選択
+    if (subSec == true) {
+        ss << "." << std::setfill('0') << std::setw(2) << centiseconds;
+    }
+
+    return ss.str();
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    //現在時刻の取得
-    int s = ofGetSeconds();
-    int m = ofGetMinutes();
-    int h = ofGetHours();
-    int d = ofGetDay();
-    int month = ofGetMonth();
-    int y = ofGetYear();
+
+    dateTime = get_time_string(subSecToggle, weekToggle);
     
-    //文字で表示する
-    ofSetColor(255, 255, 255);
-    dateTime = ofToString(y, 0) + "/" + ofToString(month, 0) + "/" + ofToString(d, 0) + "  " + ofToString(h, 0) + ":" + paddingNumberToString(m) + ":" + paddingNumberToString(s);
+    if(fontSize != fontSizeSlider){
+        fontSize = fontSizeSlider;
+        fontText.load("Lato-Regular.ttf", fontSize);
+    }
 }
 
 //--------------------------------------------------------------
@@ -49,14 +74,13 @@ void ofApp::draw(){
     ofSetColor(50, 50, 50);
     for (int y = -3; y < 3; y++) {
         for (int x = -3; x < 3; x++) {
-            fontText.drawString(dateTime,
-                            px + x, py + y );
+            fontText.drawString(dateTime, px + x, py + y );
         }
     }
     ofSetColor(color);
     fontText.drawString(dateTime, px, py);
 
-    //ここで送信している
+    //ここでSyphon送信
     output.publishScreen();
     
     gui.draw();
@@ -127,31 +151,4 @@ void ofApp::gotMessage(ofMessage msg){
 //--------------------------------------------------------------
 void ofApp::dragEvent(ofDragInfo dragInfo){ 
 
-}
-
-string ofApp::paddingNumberToString(int i){
-    switch (i) {
-        case 0:
-            return "00";
-        case 1:
-            return "01";
-        case 2:
-            return "02";
-        case 3:
-            return "03";
-        case 4:
-            return "04";
-        case 5:
-            return "05";
-        case 6:
-            return "06";
-        case 7:
-            return "07";
-        case 8:
-            return "08";
-        case 9:
-            return "09";
-        default:
-            return ofToString(i, 0);
-    }
 }
