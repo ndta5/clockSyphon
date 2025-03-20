@@ -6,9 +6,9 @@ This App outputs time date by Syphon using openFrameworks, I made this for the V
 ![App image](img/clockSyphon.png)
 
 # Executable file
-The executable file is in the "bin" folder
+The executable file is in the "app" folder. Unzip "clockSyphon.zip" file to use.
 
-実行ファイル(アプリ)は「bin」フォルダの中にあります
+実行ファイル(アプリ)は「app」フォルダの中にあります。clockSyphon.zipを解凍して使用してください。
 
 # Build
 
