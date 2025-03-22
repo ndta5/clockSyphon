@@ -8,11 +8,12 @@ This App outputs time date by Syphon using openFrameworks, I made this for the V
 ## Feature
 
 - syphon output available ( https://syphon.github.io/ )
+- The text can be moved to any position
 - Optionally display 1/100 sec.
 - Optionally display the day of the week
 - You can change the font, color and size
 
-syphon出力を利用可能。1/100秒表示および曜日表示を選択可能。フォント・色・サイズを変更できます
+syphon出力を利用可能。1/100秒表示および曜日表示を選択可能。任意の位置・フォント・色・サイズを変更できます
 
 # Executable file
 The executable file is in the "bin.zip". Unzip "bin.zip" to use.
