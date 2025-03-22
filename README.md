@@ -5,10 +5,16 @@ This App outputs time date by Syphon using openFrameworks, I made this for the V
 
 ![App image](img/clockSyphon.png)
 
+## Feature
+
+- syphon output available (https://syphon.github.io/)
+- 1/1000 sec. can be displayed as an option
+- Optionally display the day of the week
+
 # Executable file
 The executable file is in the "bin.zip". Unzip "bin.zip" to use.
 
-実行ファイル(アプリ)はbin.zipにあります。bin.zipを解凍して使用してください。
+手っ取り早く使いたい人へ、実行ファイル(アプリ)はbin.zipに入ってます。bin.zipを解凍して使用してください。
 
 # Build
 
