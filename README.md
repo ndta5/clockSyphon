@@ -12,7 +12,7 @@ This App outputs time date by Syphon using openFrameworks, I made this for the V
 - Optionally display the day of the week
 - You can change the font, color and size
 
-syphon 出力が利用可能 ( https://syphon.github.io/ )。1/100秒表示を選択可能。曜日表示をを選択可能。フォント、色、サイズを変更できます
+syphon出力を利用可能。1/100秒表示を選択可能。曜日表示をを選択可能。フォント、色、サイズを変更できます
 
 # Executable file
 The executable file is in the "bin.zip". Unzip "bin.zip" to use.
